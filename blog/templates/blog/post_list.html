@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-</head>
-<body>
-	<h2>Success!</h2>
-	{{posts_jung}}
-	<br><br>
-	{% for post in posts_jung %}
-		<h2>{{post}} </h2><br>
-	{% endfor %}
-</body>
-</html>
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<span class="test">This is test!!! CSS</span>
+<br><br>
+{% for post in posts %}
+	<h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+	<span>{{post.pk}}</span>
+{% endfor %}
+{% endblock %}
